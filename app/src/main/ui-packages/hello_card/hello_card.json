@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "Ec1RfsNXYbJjJ6rAvz7K5m",
     "node": "4:2",
-    "version": "5018488015",
+    "version": "5026679462",
     "component-id": "fe7ec0abb2cde87cb87bc1062feec1fd77eb1dc0"
   },
   "default": "Hello Card",
@@ -24,6 +24,14 @@
       {
         "type": "text",
         "id": "Title"
+      },
+      {
+        "type": "group",
+        "id": "Button"
+      },
+      {
+        "type": "text",
+        "id": "Text"
       }
     ],
     "modes": {
@@ -32,19 +40,22 @@
           {
             "id": "top_level",
             "padding": "16.0",
+            "longpress-handler": "$on Hello Card long pressed",
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "shrink"
               },
               "height-constraints": {
-                "sizing-mode": "shrink"
+                "sizing-mode": "proportional",
+                "value": "1.0"
               }
             },
             "main-axis-align": "start",
             "cross-axis-align": "start",
             "children": [
               "Image",
-              "Title"
+              "Title",
+              "Button"
             ],
             "item-spacing": "16.0",
             "background-color": {
@@ -84,12 +95,61 @@
             "text-size": "24.0",
             "line-height": "1.219000021616618",
             "typeface": "Montserrat"
+          },
+          {
+            "id": "Button",
+            "padding": {
+              "left": "24.0",
+              "top": "12.0",
+              "right": "24.0",
+              "bottom": "12.0"
+            },
+            "border-radius": "38.0",
+            "tap-handler": "$on Button tapped",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "Text"
+            ],
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "32.727272727272755",
+              "saturation": "0.09482758620689659",
+              "value": "0.9098039215686274"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "Text",
+            "font-weight": "500.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "24.545454545454554",
+              "saturation": "0.275",
+              "value": "0.3137254901960784"
+            },
+            "text-content": "Send",
+            "overflow": "visible",
+            "text-size": "20.0",
+            "line-height": "1.2"
           }
         ]
       }
     }
   },
   "parameters": {
+    "on Hello Card long pressed": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
     "Image": {
       "data-type": "image",
       "required": false,
@@ -99,6 +159,11 @@
       "data-type": "text",
       "required": false,
       "description": ""
+    },
+    "on Button tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
     }
   },
   "previews": [
@@ -106,7 +171,7 @@
       "design": "Hello Card",
       "size": {
         "width": 248.0,
-        "height": 201.0
+        "height": 266.0
       },
       "parameters": {
         "Image": "image.jpeg",
